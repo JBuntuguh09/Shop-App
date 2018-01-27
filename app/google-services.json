@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "592575744004",
+    "firebase_url": "https://shopapp-846e2.firebaseio.com",
+    "project_id": "shopapp-846e2",
+    "storage_bucket": "shopapp-846e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592575744004:android:4cc8e74426f7b7da",
+        "android_client_info": {
+          "package_name": "app.start.lonewolf.shopapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "592575744004-2qbd68qhpv0oqhkgrfud0j7fhcha1g89.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.start.lonewolf.shopapp",
+            "certificate_hash": "1a990126a278c7a05ec6de2c074ec25edb3f6ffa"
+          }
+        },
+        {
+          "client_id": "592575744004-n8c240ekk73kj81dv0f8m68c3krim6d2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA872DfLYG0TtAPT5FrA9IkS_aRmncjNjc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592575744004-n8c240ekk73kj81dv0f8m68c3krim6d2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

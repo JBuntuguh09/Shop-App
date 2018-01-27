@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/mainTab"
+    android:background="@color/colorPrimary"
+    android:titleTextColor="@color/colorAccent"
+    android:subtitleTextColor="@color/white"
+    android:title="Awesome"
+    android:gravity="center"
+    android:textAlignment="center"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="kert"
+        android:gravity="center"
+        android:textAlignment="center"/>
+
+</android.support.v7.widget.Toolbar>

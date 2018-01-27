@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">ShopApp</string>
+    <string name="submit">Submit</string>
+    <string name="quantitiy">Quantitiy</string>
+    <string name="price">Price</string>
+    <string name="item_name">Item Name</string>
+    <string name="date">Date</string>
+    <string name="view_sales">View Sales</string>
+
+    <array name="Selectcategory">
+
+        <item>Select a Category</item>
+        <item>Canned Goods</item>
+        <item>Sweets</item>
+        <item>Biscuits</item>
+        <item>Food</item>
+        <item>Drinks</item>
+
+    </array>
+    <array name="selectItem">
+        <item>Select Item</item>
+    </array>
+</resources>

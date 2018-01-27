@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.start.lonewolf.shopapp.MainActivity">
+
+
+    <Button
+        android:id="@+id/btnRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="136dp"
+        android:text="Record" />
+
+    <Button
+        android:id="@+id/btnCalculator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:text="Calculator"
+        android:layout_below="@+id/btnRecord"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnInventory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnRecord"
+        android:layout_alignStart="@+id/btnRecord"
+        android:layout_below="@+id/btnCalculator"
+        android:layout_marginTop="40dp"
+        android:text="Inventory" />
+
+    <Button
+        android:text="@string/view_sales"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnInventory"
+        android:layout_alignEnd="@+id/btnCalculator"
+        android:layout_marginTop="31dp"
+        android:id="@+id/btnViewSales" />
+</RelativeLayout>
