@@ -13,6 +13,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:id="@+id/imgSales"
             android:layout_gravity="center"
             app:srcCompat="@drawable/common_google_signin_btn_icon_light_disabled" />
         <LinearLayout
@@ -20,23 +21,29 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:layout_marginLeft="10dp"
+            android:background="@drawable/buttons"
             android:orientation="vertical">
             <TextView
+                android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtAllSalesItem"
                 android:text="@string/item_name"/>
             <TextView
+                android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtAllSalesQuantity"
                 android:text="@string/quantitiy"/>
             <TextView
+                android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtAllSalesPrice"
                 android:text="@string/price"/>
             <TextView
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtAllSalesDate"

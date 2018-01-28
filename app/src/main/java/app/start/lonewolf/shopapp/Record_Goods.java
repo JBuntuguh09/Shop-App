@@ -2,6 +2,8 @@ package app.start.lonewolf.shopapp;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,13 +20,19 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.StorageReference;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import id.zelory.compressor.Compressor;
 
 public class Record_Goods extends AppCompatActivity {
 
@@ -32,14 +40,19 @@ public class Record_Goods extends AppCompatActivity {
     private Spinner category;
     private Button submit;
     private ImageView image;
-    private DatabaseReference databaseReference, categoryRef;
+    private DatabaseReference databaseReference, categoryRef, picRef;
     private  List<String> newArray, newArray2;
+    private SavedPreferences userPreference;
+    private int picId;
+
+    private StorageReference storageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record__goods);
 
+        userPreference = new SavedPreferences(this);
         item = (EditText)findViewById(R.id.edtRecordItemName);
         price = (EditText)findViewById(R.id.edtRecordPrice);
         quantity = (EditText)findViewById(R.id.edtRecordQty);
@@ -63,9 +76,21 @@ public class Record_Goods extends AppCompatActivity {
         image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AddPic addPic = new AddPic();
+                addPic.show(getFragmentManager(), null);
+               // finish();
 
             }
         });
+
+        if(!userPreference.getPicture().isEmpty()){
+            String strBase64 = userPreference.getPicture();
+            Bitmap bmp = Constant.decodeBase64(strBase64);
+            if (bmp != null) {
+
+                image.setImageBitmap(bmp);
+            }
+        }
 
     }
 
@@ -84,6 +109,7 @@ public class Record_Goods extends AppCompatActivity {
                     databaseReference.child(category.getSelectedItem().toString()).child(item.getText().toString()).child("item").setValue(item.getText().toString());
                     databaseReference.child(category.getSelectedItem().toString()).child(item.getText().toString()).child("price").setValue(price.getText().toString());
                     databaseReference.child(category.getSelectedItem().toString()).child(item.getText().toString()).child("quantity").setValue(quantity.getText().toString());
+                    //databaseReference.child(category.getSelectedItem().toString()).child(item.getText().toString()).child("image").setValue(userPreference.getPicture());
                 }
             }
 
@@ -168,8 +194,28 @@ public class Record_Goods extends AppCompatActivity {
     private void getDrop() {
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, newArray2);
-        arrayAdapter.setDropDownViewResource(R.layout.spinner_item);
+        arrayAdapter.setDropDownViewResource(R.layout.drop_down_layout);
         category.setAdapter(arrayAdapter);
+    }
+
+    private void sendPic() throws IOException {
+
+        final Uri uri = Uri.parse(userPreference.getPicture());
+
+
+        File actualImage = new File(uri.getPath());
+        Bitmap compressedImage = new Compressor(Record_Goods.this)
+                .setMaxWidth(200)
+                .setMaxHeight(200)
+                .setQuality(75)
+                .compressToBitmap(actualImage);
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        compressedImage.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        final byte[] thumbByte = baos.toByteArray();
+
+
+
     }
 
 

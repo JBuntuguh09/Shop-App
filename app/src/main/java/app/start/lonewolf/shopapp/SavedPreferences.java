@@ -1,9 +1,9 @@
-package app.start.lonewolf.chatapp;
+package app.start.lonewolf.shopapp;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import static android.content.SharedPreferences.*;
+import static android.content.SharedPreferences.Editor;
 
 /**
  * Created by lonewolf on 8/10/2017.
@@ -19,6 +19,7 @@ public class SavedPreferences {
     private final String pPrevPage = "previous_Page";
     private final String pArticle_Id = "articleId";
     private final String pIsAnnonymous = "annonymous";
+    private final String pPicture = "pictures";
 
 
     public SavedPreferences(Context context) {
@@ -100,6 +101,16 @@ public class SavedPreferences {
         editor.putString(pIsAnnonymous, annonymous);
         editor.commit();
 
+    }
+
+    public String getPicture(){
+        return sharedPreferences.getString(pPicture, "");
+    }
+
+    public void setPicture(String picture){
+        Editor editor= getEditor();
+        editor.putString(pPicture, picture);
+        editor.commit();
     }
 }
 

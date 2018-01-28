@@ -29,6 +29,7 @@
         android:layout_marginTop="20dp">
 
         <EditText
+            style="@style/SetupEditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/item_name"
@@ -40,6 +41,7 @@
         android:layout_marginTop="20dp">
 
         <EditText
+            style="@style/SetupEditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/price"
@@ -51,6 +53,7 @@
         android:layout_marginTop="20dp">
 
         <EditText
+            style="@style/SetupEditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/quantitiy"
@@ -61,11 +64,14 @@
         android:layout_height="wrap_content"
         android:entries="@array/Selectcategory"
         android:id="@+id/spinCategory"
+        android:background="@drawable/buttons"
+        style="@style/ButtonBlueWithWrapParent"
         android:layout_marginTop="20dp"/>
 
 
 
     <Button
+        android:background="@drawable/buttons"
         android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

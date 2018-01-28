@@ -1,10 +1,13 @@
 package app.start.lonewolf.shopapp.viewHolders;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import app.start.lonewolf.shopapp.Constant;
 import app.start.lonewolf.shopapp.R;
 
 import static android.support.v7.widget.RecyclerView.*;
@@ -40,5 +43,17 @@ public class Goods_View_Holder extends RecyclerView.ViewHolder {
         TextView Date = (TextView)view.findViewById(R.id.txtAllSalesDate);
         Date.setText(date);
     }
+/*
+    public void setImage(String image){
+        ImageView Image = (ImageView)view.findViewById(R.id.imgSales);
+        if(image.isEmpty()){
+            String strBase64 = image;
+            Bitmap bmp = Constant.decodeBase64(strBase64);
+            if (bmp != null) {
 
+                Image.setImageBitmap(bmp);
+            }
+        }
+    }
+*/
 }

@@ -1,4 +1,4 @@
-package infoview.io.shschoice;
+package app.start.lonewolf.shopapp;
 
 import android.app.DialogFragment;
 import android.content.Intent;
@@ -22,7 +22,7 @@ import java.io.ByteArrayOutputStream;
 
 public class AddPic extends DialogFragment {
     private LinearLayout camera, gallery;
-    private User_Preference userPreference;
+    private SavedPreferences userPreference;
     public static final int SELECT_CAMERA = 101;
     public static final int SELECT_GALLERY = 102;
     private ImageView imgPicture;
@@ -33,7 +33,7 @@ public class AddPic extends DialogFragment {
         View view = inflater.inflate(R.layout.picture_layout, container, false);
 
         imgPicture = (ImageView)view.findViewById(R.id.testPicture);
-        userPreference = new User_Preference(getActivity());
+        userPreference = new SavedPreferences(getActivity());
         camera = (LinearLayout) view.findViewById(R.id.layCamera);
         gallery = (LinearLayout) view.findViewById(R.id.layGallery);
 
@@ -90,10 +90,12 @@ public class AddPic extends DialogFragment {
                     userPreference.setPicture(imagebase64format);
                      imgPicture.setImageBitmap(picture);
 
-                    Intent intent = new Intent(getActivity(), StartPage.class);
+                    Intent intent = new Intent(getActivity(), Record_Goods.class);
                     startActivity(intent);
 
+
                     dismiss();
+
 
                 }else
             //    break;
@@ -111,7 +113,7 @@ public class AddPic extends DialogFragment {
                     imagebase64format = Base64.encodeToString(b, Base64.DEFAULT);
                     userPreference.setPicture(imagebase64format);
 
-                    Intent intent = new Intent(getActivity(), StartPage.class);
+                    Intent intent = new Intent(getActivity(), Record_Goods.class);
                     startActivity(intent);
                     dismiss();
 

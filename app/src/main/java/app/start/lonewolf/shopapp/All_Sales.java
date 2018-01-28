@@ -52,6 +52,7 @@ public class All_Sales extends AppCompatActivity {
                 viewHolder.setQuantity(model.getQuantity());
                 viewHolder.setPrice(model.getPrice());
                 viewHolder.setDate(model.getDate());
+                //viewHolder.setImage(model.getImage());
                 progressDialog.dismiss();
             }
         };

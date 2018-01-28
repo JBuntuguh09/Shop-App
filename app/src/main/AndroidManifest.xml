@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".Enter_Sales" />
         <activity android:name=".Record_Goods" />
-        <activity android:name=".All_Sales"></activity>
+        <activity android:name=".All_Sales" />
+        <activity android:name=".Calculator"></activity>
     </application>
 
 </manifest>

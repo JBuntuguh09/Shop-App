@@ -5,20 +5,33 @@ package app.start.lonewolf.shopapp.models;
  */
 
 public class SalesModel {
-    private String item, quantity, salesId, price, date;
+    private String item, quantity, salesId, price, date, image;
+
+
 
     public SalesModel(){
 
     }
 
-    public SalesModel(String item, String quantity, String salesId, String price, String date) {
+    public SalesModel(String item, String quantity, String salesId, String price, String date/*, String image*/) {
         this.item = item;
         this.quantity = quantity;
         this.salesId = salesId;
         this.price = price;
         this.date =date;
+       // this.image=image;
+
     }
 
+/*
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+*/
     public String getItem() {
         return item;
     }
